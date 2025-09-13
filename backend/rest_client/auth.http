@@ -18,8 +18,8 @@ POST {{host}}/auth/login HTTP/1.1
 content-type: {{ content}}
 
 {
-    "username": "gugun",
-    "password": "gugun1710"
+    "username": "gunturmaulana",
+    "password": "password"
 }
 
 ### 3. Change Password (Protected - requires token)
