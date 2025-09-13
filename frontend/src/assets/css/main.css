@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+/* Styling global sesuai kebutuhan */
+/* Styling untuk komponen umum */
+
+.input {
+  @apply bg-gray-100 text-gray-800  p-2 border border-gray-300 focus:outline-none focus:ring-2 rounded focus:ring-blue-400;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center font-semibold text-center px-4 py-2 rounded border-2 border-transparent transition-all cursor-pointer;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white;
+}
+.btn-primary:hover {
+  @apply bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-blue-500 text-blue-500;
+}
+.btn-secondary:hover {
+  @apply bg-blue-500 text-white;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  background-color: #f9fafb; /* Warna background abu muda */
+  color: #333;
+}
+
+.label {
+  @apply block text-gray-700 text-sm font-medium mb-1;
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition;
+}
+
+/* Button umum (untuk Keranjang & tombol login) */
+
+.btn-primary {
+  background-color: #2563eb; /* biru utama */
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #1e40af; /* biru gelap saat hover */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+.btn-secondary:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Tombol + Keranjang spesial */
+.btn-cart {
+  @apply w-full mt-2 text-center bg-blue-500 text-white font-medium rounded py-2;
+  transition: background-color 0.3s ease;
+}
+.btn-cart:hover {
+  background-color: #1e40af;
+}
+
+/* Tombol filter kategori (berbeda dengan btn utama) */
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  /*Fullrounded*/
+  background-color: #eff6ff;
+  /*Birusangatmuda*/
+  color: #2563eb;
+  /*Teksbiruutama*/
+  font-size: 0.875rem;
+  /*text-sm*/
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.filter-btn:hover {
+  background-color: #dbeafe; /* Biru lebih gelap saat hover */
+}
+
+.filter-btn.active {
+  background-color: #2563eb; /* Biru utama */
+  color: white;
+}
+
+/* Navbar link (optional) */
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #2563eb;
+}
+.nav-link.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Styling tambahan swiper pagination (jika pakai swiper) */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 0.7;
+  margin: 0 2px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 9999px;
+  background: white;
+  opacity: 1;
+}
+.swiper-pagination {
+  bottom: 0.5rem !important;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tambahan untuk login layout */
+@media (min-width: 768px) {
+  .login-container {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border-radius: 40px;
+    overflow: hidden;
+  }
+}
+
+/* Perbaiki input agar lebih mirip desain */
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-gray-100 text-gray-800;
+  font-size: 1rem;
+}
+
+/* Perbaiki button agar lebih solid */
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+/* Perbaiki shadow agar lebih soft */
+.shadow-xl {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15) !important;
+}
+
+/* Perbaiki bullet carousel */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 0.7;
+  margin: 0 2px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 9999px;
+  background: white;
+  opacity: 1;
+}
+
+/* Efek transisi dan visual pada button */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-cart,
+button {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s,
+    color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  will-change: transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  outline: none;
+}
+
+/* Efek tombol ditekan */
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-cart:active,
+button:active {
+  transform: scale(0.94);
+  box-shadow: 0 1px 4px 0 rgba(31, 38, 135, 0.13);
+  filter: brightness(0.95);
+  background-color: #e0e7ff !important; /* biru sangat muda, override tailwind jika perlu */
+  border-color: #2563eb !important;
+}
+
+/* Untuk tombol utama biru, efek aktif lebih gelap */
+.btn-primary:active {
+  background-color: #1e40af !important;
+  color: #fff !important;
+}
+
+/* Untuk tombol keranjang, efek aktif lebih gelap */
+.btn-cart:active {
+  background-color: #1e40af !important;
+  color: #fff !important;
+}
+
+/* Badge pop animation */
+.badge-pop-enter-active {
+  animation: badge-pop 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes badge-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide in from left for tagihan */
+.slide-tagihan-enter-active {
+  animation: slide-tagihan-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes slide-tagihan-in {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+    -moz-transform: translateX(-40px);
+    -ms-transform: translateX(-40px);
+    -o-transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.iziToast-wrapper.iziToast-wrapper-topRight {
+  /* top: 150px !important; */
+}
