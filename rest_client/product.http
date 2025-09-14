@@ -1,0 +1,29 @@
+@host=http://127.0.0.1:3000
+@content=application/json
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJndW50dXJtYXVsYW5hIiwiZW1haWwiOiJndW50dXJAZ21haWwuY29tIiwiaWF0IjoxNzU3ODMwNjMzLCJleHAiOjE3NTc4MzQyMzN9.0YrRO5n2IorDgWOblBXifOFfyoTbdslzgAueRK0MuEk
+
+### Get All Products (Public)
+GET {{host}}/products/all HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: {{content}}
+
+### Get Product By ID (Public)
+GET {{host}}/products/1 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: {{content}}
+
+### Create Product (Protected)
+POST {{host}}/products/create HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: {{content}}
+
+{
+    "name": "Productwwr Test",
+    "description": "This is a test product",
+    "image_url": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=400&fit=crop",
+    "price": 100000,
+    "category_id": 1
+}
+
+
+
