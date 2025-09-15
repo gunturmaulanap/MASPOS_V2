@@ -135,6 +135,11 @@ const changePassword = handleException(async (req, res) => {
 
 // Logout
 const logout = handleException(async (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+  });
   const authHeader = req.headers.authorization;
   if (!authHeader) {
     throw new InvalidData("Token tidak ditemukan!");
